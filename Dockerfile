@@ -2,6 +2,7 @@ FROM python:3.11-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libglib2.0-0 libsm6 libxext6 libxrender-dev libgomp1 \
+    libgl1 \
     wget curl git \
     && rm -rf /var/lib/apt/lists/*
 
@@ -12,7 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY main.py .
 
-# Create model dir — custom weights go here when trained
 RUN mkdir -p model
 
 # Pre-download YOLOv11n base weights as placeholder
