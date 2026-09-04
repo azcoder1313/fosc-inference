@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 *.pyo
-model/*.pt
+# model/*.pt  <- removed to allow committing trained weights
 !model/.gitkeep
 .env
 /tmp/
